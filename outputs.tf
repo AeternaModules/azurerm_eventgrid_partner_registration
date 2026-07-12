@@ -1,3 +1,7 @@
+output "eventgrid_partner_registrations_id" {
+  description = "Map of id values across all eventgrid_partner_registrations, keyed the same as var.eventgrid_partner_registrations"
+  value       = { for k, v in azurerm_eventgrid_partner_registration.eventgrid_partner_registrations : k => v.id }
+}
 output "eventgrid_partner_registrations_name" {
   description = "Map of name values across all eventgrid_partner_registrations, keyed the same as var.eventgrid_partner_registrations"
   value       = { for k, v in azurerm_eventgrid_partner_registration.eventgrid_partner_registrations : k => v.name }
