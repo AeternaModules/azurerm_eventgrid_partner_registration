@@ -1,21 +1,21 @@
 output "eventgrid_partner_registrations_id" {
   description = "Map of id values across all eventgrid_partner_registrations, keyed the same as var.eventgrid_partner_registrations"
-  value       = { for k, v in azurerm_eventgrid_partner_registration.eventgrid_partner_registrations : k => v.id }
+  value       = { for k, v in azurerm_eventgrid_partner_registration.eventgrid_partner_registrations : k => v.id if v.id != null && length(v.id) > 0 }
 }
 output "eventgrid_partner_registrations_name" {
   description = "Map of name values across all eventgrid_partner_registrations, keyed the same as var.eventgrid_partner_registrations"
-  value       = { for k, v in azurerm_eventgrid_partner_registration.eventgrid_partner_registrations : k => v.name }
+  value       = { for k, v in azurerm_eventgrid_partner_registration.eventgrid_partner_registrations : k => v.name if v.name != null && length(v.name) > 0 }
 }
 output "eventgrid_partner_registrations_partner_registration_id" {
   description = "Map of partner_registration_id values across all eventgrid_partner_registrations, keyed the same as var.eventgrid_partner_registrations"
-  value       = { for k, v in azurerm_eventgrid_partner_registration.eventgrid_partner_registrations : k => v.partner_registration_id }
+  value       = { for k, v in azurerm_eventgrid_partner_registration.eventgrid_partner_registrations : k => v.partner_registration_id if v.partner_registration_id != null && length(v.partner_registration_id) > 0 }
 }
 output "eventgrid_partner_registrations_resource_group_name" {
   description = "Map of resource_group_name values across all eventgrid_partner_registrations, keyed the same as var.eventgrid_partner_registrations"
-  value       = { for k, v in azurerm_eventgrid_partner_registration.eventgrid_partner_registrations : k => v.resource_group_name }
+  value       = { for k, v in azurerm_eventgrid_partner_registration.eventgrid_partner_registrations : k => v.resource_group_name if v.resource_group_name != null && length(v.resource_group_name) > 0 }
 }
 output "eventgrid_partner_registrations_tags" {
   description = "Map of tags values across all eventgrid_partner_registrations, keyed the same as var.eventgrid_partner_registrations"
-  value       = { for k, v in azurerm_eventgrid_partner_registration.eventgrid_partner_registrations : k => v.tags }
+  value       = { for k, v in azurerm_eventgrid_partner_registration.eventgrid_partner_registrations : k => v.tags if v.tags != null && length(v.tags) > 0 }
 }
 
